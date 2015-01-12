@@ -1,4 +1,4 @@
-Douban CSS Code Guideline 
+CSS Code Guideline 
 ===================
 
  1. CSS浏览器支持标准 
@@ -18,7 +18,6 @@ Douban CSS Code Guideline
 </td></tr><tr><td> Opera </td><td> C  </td><td> C </td><td> C 
 </td></tr></tbody></table>
 
-（注：根据2012年4月数据整理）
 
 *  A级－交互和视觉完全符全设计的要求
 *  B级－视觉上允许有所差异，但不破坏页面的整体效果
@@ -27,53 +26,15 @@ Douban CSS Code Guideline
 
 2. 重用已有的样式库
 ---------------------
- * 2-1. 主站全局CSS文件 - douban.css (注意：新项目中不推荐使用)
- * 2-2. 兼容主站的全局CSS文件 - /css/core/_init_.css
- * 2-3. 当前使用的CSS库（持续更新）
-   * util-01 reset /css/core/reset.css
-   * util-02 通用模块容器 /css/core/mod.css
-   * ui-01. 喜欢按钮  /css/core/fav_btn.css
-   * ui-02. 视频/相册列表项 /css/core/media_item.css
-   * ui-03. 评星 /css/core/rating.css
-   * ui-04. 通用按钮 /css/core/common_button.css
-   * ui-05. 分页 /css/core/pagination.css
-   * ui-06. 推荐按钮 /css/core/rec_btn.css
-   * ui-07. 老版对话框 /css/core/old_dialog.css
-   * ui-08. 老版Tab /css/core/old_tab.css
-   * ui-09. 老版成员列表 /css/core/old_userlist.css
-   * ui-10. 老版信息区 /css/core/notify.css
-   * ui-11. 社区用户导航 /css/core/profile_nav.css
-   * ui-12. 当前大社区导航 /css/core/site_nav.css
-   * ui-13. 加载中 /css/lib/loading.css
+ * 2-1. 主站全局CSS文件 - global.css
+ * 2-2. 当前使用的CSS库（持续更新）
+   * css/bootstrap.css
+   * css/bootstrap-theme.css
 
 3. CSS文件的目录管理
 ---------------------
-所有的CSS分为两大类：通用类和业务类。
+所有的CSS放在如下目录中 css/
 
- * 3-1. 通用的CSS文件，放在如下目录中：
-<table width="300" style="margin-left:60px;">
-<tbody><tr><td> 基本样式库 </td><td style="text-align: left"> /css/core 
-</td></tr><tr><td> 通用UI元素样式库 </td><td style="text-align: left"> /css/lib
-</td></tr><tr><td> JS组件相关样式库 </td><td style="text-align: left"> /css/ui
-</td></tr></tbody></table>
-
- * 3-2. 业务类的CSS是指和具体产品（如音乐、读书等）相关的文件，放在如下目录中：
-<table width="200" style="margin-left:60px;">
-<tbody><tr><td> 读书 </td><td style="text-align: left"> /css/book/ 
-</td></tr><tr><td> 电影 </td><td style="text-align: left"> /css/movie/ 
-</td></tr><tr><td> 音乐 </td><td style="text-align: left"> /css/music/ 
-</td></tr><tr><td> 社区 </td><td style="text-align: left"> /css/sns/ 
-</td></tr><tr><td> 小站 </td><td style="text-align: left"> /css/site/ 
-</td></tr><tr><td> 同城 </td><td style="text-align: left"> /css/location/ 
-</td></tr><tr><td> 电台 </td><td style="text-align: left"> /css/radio/ 
-</td></tr><tr><td> 九点 </td><td style="text-align: left"> /css/newnine/ 
-</td></tr><tr><td> 商务 </td><td style="text-align: left"> /css/biz/ 
-</td></tr><tr><td style="text-align: center">  ...  </td><td style="text-align: left"> /css/产品名称 
-</td></tr></tbody></table>
-
- * 3-3. 外联CSS文件适用于全站级和产品级通用的大文件。
- * 3-4. 内联CSS文件适用于在一个或几个页面共用的CSS。利用模板系统支持的istatic方法引用。
- * 3-5. 模块依赖的CSS和模块放在一起。利用模板系统支持的collect_css过滤器实现。
 
 4. CSS的模块化组织 
 ---------------------
@@ -90,7 +51,7 @@ Douban CSS Code Guideline
 6. 单条CSS规则的书写格式要求
 ---------------------
 
- * 6-1. 单行形式适用于直接写在页面中和长文件的情况。声明写在一行。需要在“{"和"}”前后加空格。
+ * 6-1. 单行形式(例如)。
 （注：在很长的文件中，单行形式有利于检索选择器）
 
 ```css
